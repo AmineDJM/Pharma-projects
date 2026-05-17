@@ -14,6 +14,20 @@ STATUS_COLORS = {
     "Approuvé": "#D9FDD3",
     "Déposé": "#E3F2FD",
     "Non déposé": "#F3F3F3",
+    "Ready for launch": "#D9FDD3",
+    "À revoir": "#FFE9B3",
+    "Go": "#D9FDD3",
+    "No Go": "#FFD6D6",
+}
+
+CATEGORY_COLORS = {
+    "Produit": "#E9ECEF",
+    "Dossier réglementaire": "#DDEBFF",
+    "Évaluation technique": "#EFE3FF",
+    "Tech transfer": "#FFF2CC",
+    "Enregistrement ANPP": "#DFF6E4",
+    "Site readiness": "#FFE5CC",
+    "Business": "#FADADD",
 }
 
 FORM_ABBREVIATIONS = {
@@ -25,9 +39,11 @@ FORM_ABBREVIATIONS = {
     "gelule": "gel",
     "injectable": "inj",
     "injection": "inj",
+    "solution injectable": "inj",
     "sirop": "syr",
     "solution": "sol",
     "suspension": "susp",
+    "poudre": "pwd",
 }
 
 PRODUCTION_LINES = [
@@ -45,9 +61,9 @@ PRODUCTION_LINES = [
 CATEGORIES = {
     "Produit": [
         "product_key", "supplier", "manufacturer", "distributor",
-        "priority", "availability_status", "global_status"
+        "priority", "availability_status", "global_status", "project_manager"
     ],
-    "Dossier": [
+    "Dossier réglementaire": [
         "dossier_available", "module_1", "module_2", "module_3", "module_4", "module_5",
         "dossier_reserve", "dossier_owner", "dossier_deadline"
     ],
@@ -60,7 +76,7 @@ CATEGORIES = {
         "process_validation_received", "pilot_batch_done", "validation_batch_done",
         "technical_issue", "next_action_tt", "tt_owner", "tt_deadline"
     ],
-    "Enregistrement": [
+    "Enregistrement ANPP": [
         "pre_submission", "anpp_submission_date", "receipt_acknowledged", "anpp_reserves",
         "reserve_response_status", "amm_obtained", "estimated_amm_date", "regulatory_status"
     ],
@@ -83,64 +99,65 @@ COLUMN_LABELS = {
     "priority": "Priorité",
     "availability_status": "Disponibilité",
     "global_status": "Statut global",
+    "project_manager": "Chef de projet",
 
-    "dossier_available": "Dossier disponible",
-    "module_1": "Module 1",
-    "module_2": "Module 2",
-    "module_3": "Module 3",
-    "module_4": "Module 4",
-    "module_5": "Module 5",
+    "dossier_available": "Dossier dispo",
+    "module_1": "M1",
+    "module_2": "M2",
+    "module_3": "M3",
+    "module_4": "M4",
+    "module_5": "M5",
     "dossier_reserve": "Réserve dossier",
-    "dossier_owner": "Responsable dossier",
-    "dossier_deadline": "Deadline dossier complet",
+    "dossier_owner": "Resp. dossier",
+    "dossier_deadline": "Deadline dossier",
 
-    "site_feasible": "Faisable sur site actuel",
-    "specific_equipment_needed": "Besoin équipement spécifique",
-    "missing_equipment": "Équipement manquant",
-    "oeb_level": "Niveau OEB",
-    "containment_needed": "Besoin confinement",
-    "dedicated_area_needed": "Besoin zone dédiée",
-    "production_comment": "Commentaire production",
+    "site_feasible": "Faisabilité site",
+    "specific_equipment_needed": "Équip. spécifique",
+    "missing_equipment": "Équip. manquant",
+    "oeb_level": "OEB",
+    "containment_needed": "Confinement",
+    "dedicated_area_needed": "Zone dédiée",
+    "production_comment": "Commentaire prod.",
     "technical_status": "Statut technique",
 
-    "batch_formula_received": "Batch formula reçue",
-    "manufacturing_process_received": "Manufacturing process reçu",
-    "analytical_methods_received": "Analytical methods reçues",
-    "process_validation_received": "Validation process reçue",
-    "pilot_batch_done": "Batch pilote fait",
-    "validation_batch_done": "Batch validation fait",
-    "technical_issue": "Problème technique",
+    "batch_formula_received": "Batch formula",
+    "manufacturing_process_received": "Process reçu",
+    "analytical_methods_received": "Méthodes analytiques",
+    "process_validation_received": "Validation process",
+    "pilot_batch_done": "Batch pilote",
+    "validation_batch_done": "Batch validation",
+    "technical_issue": "Problème TT",
     "next_action_tt": "Prochaine action TT",
-    "tt_owner": "Responsable TT",
+    "tt_owner": "Resp. TT",
     "tt_deadline": "Deadline TT",
 
     "pre_submission": "Pré-soumission",
     "anpp_submission_date": "Dépôt ANPP",
-    "receipt_acknowledged": "Accusé réception",
+    "receipt_acknowledged": "AR reçu",
     "anpp_reserves": "Réserves ANPP",
-    "reserve_response_status": "Réponse aux réserves",
-    "amm_obtained": "AMM obtenue",
+    "reserve_response_status": "Réponse réserves",
+    "amm_obtained": "AMM",
     "estimated_amm_date": "Date AMM estimée",
-    "regulatory_status": "Statut réglementaire",
+    "regulatory_status": "Statut ANPP",
 
-    "room_available": "Salle disponible",
-    "hvac_ready": "HVAC prêt",
-    "equipment_installed_percent": "Équipements installés %",
-    "iq_oq_pq_status": "Qualification IQ/OQ/PQ",
-    "cleaning_validated": "Nettoyage validé",
+    "room_available": "Salle dispo",
+    "hvac_ready": "HVAC",
+    "equipment_installed_percent": "Équip. installés %",
+    "iq_oq_pq_status": "IQ/OQ/PQ",
+    "cleaning_validated": "Nettoyage",
     "personnel_trained": "Personnel formé",
-    "sop_available": "SOP disponibles",
+    "sop_available": "SOP",
     "internal_audit_date": "Audit interne",
-    "site_ready_for_product": "Site prêt pour produit",
+    "site_ready_for_product": "Site prêt",
 
     "estimated_market": "Marché estimé",
     "channel": "Canal",
     "target_price": "Prix cible",
-    "estimated_volume": "Volume estimé",
-    "estimated_margin": "Marge estimée",
+    "estimated_volume": "Volume",
+    "estimated_margin": "Marge",
     "competitors": "Concurrents",
-    "market_attractiveness": "Attractivité marché",
-    "business_go_no_go": "Go / No Go business",
+    "market_attractiveness": "Attractivité",
+    "business_go_no_go": "Go/No Go",
 }
 
 SELECT_OPTIONS = {

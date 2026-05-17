@@ -1,6 +1,6 @@
 import bcrypt
 import streamlit as st
-from db import get_session, User, UserPermission
+from db import get_session, User, UserPermission, ProductionLine
 from config import CATEGORIES
 
 def hash_password(password: str) -> str:
@@ -34,8 +34,8 @@ def authenticate(username, password):
         db.close()
 
 def login_widget():
-    st.title("Pharma Project Tracker")
-    st.caption("Connexion locale sécurisée")
+    st.title("AT Pharma — Project Tracker")
+    st.caption("Connexion locale")
     username = st.text_input("Username")
     password = st.text_input("Password", type="password")
     if st.button("Se connecter", type="primary"):
@@ -91,7 +91,7 @@ def can_edit_line_category(user, line, category):
 def accessible_lines(user):
     db = get_session()
     try:
-        all_lines = [x.name for x in db.query(__import__("db").ProductionLine).all()]
+        all_lines = [x.name for x in db.query(ProductionLine).all()]
     finally:
         db.close()
     if user["role"] == "admin":

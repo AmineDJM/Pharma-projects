@@ -3,7 +3,7 @@ from sqlalchemy.orm import declarative_base, sessionmaker, relationship
 from sqlalchemy.sql import func
 import os
 
-DB_PATH = os.environ.get("PHARMA_TRACKER_DB", "sqlite:///pharma_tracker.db")
+DB_PATH = os.environ.get("AT_PHARMA_TRACKER_DB", "sqlite:///at_pharma_tracker.db")
 engine = create_engine(DB_PATH, connect_args={"check_same_thread": False})
 SessionLocal = sessionmaker(bind=engine)
 Base = declarative_base()
@@ -13,7 +13,7 @@ class User(Base):
     id = Column(Integer, primary_key=True)
     username = Column(String, unique=True, nullable=False)
     password_hash = Column(String, nullable=False)
-    role = Column(String, default="editor")  # admin, editor, viewer
+    role = Column(String, default="editor")
     is_active = Column(Boolean, default=True)
 
 class UserPermission(Base):
@@ -49,6 +49,7 @@ class Product(Base):
     priority = Column(String, default="Moyenne")
     availability_status = Column(String, default="À confirmer")
     global_status = Column(String, default="Pas commencé")
+    project_manager = Column(String, default="")
 
     dossier_available = Column(String, default="Non")
     module_1 = Column(String, default="Manquant")

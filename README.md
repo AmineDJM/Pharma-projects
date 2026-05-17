@@ -1,22 +1,42 @@
-# Pharma Project Tracker
+# AT Pharma — Big Excel Project Tracker
 
-Application Streamlit pour suivre les projets pharma par ligne de production :
-ARV, oral oncologie, injectable oncologie, biosimilaires, hormones, capsules, general formulation, etc.
+Application Streamlit pour le suivi des projets AT Pharma sous forme de grand tableau type Excel.
+
+## Logique produit
+
+- Une feuille par ligne de production :
+  - ARV
+  - Oral oncologie
+  - Injectable oncologie
+  - Biosimilaires
+  - Oral general formulation
+  - Hormones orales
+  - Capsules molles
+  - Capsules dures
+  - Injectables classiques
+
+- Une ligne = un produit
+- Les colonnes sont groupées par catégories :
+  - Produit
+  - Dossier réglementaire
+  - Évaluation technique
+  - Tech transfer
+  - Enregistrement ANPP
+  - Site readiness
+  - Business
 
 ## Fonctionnalités
 
-- Login local username/password sans Google
-- Admin crée les utilisateurs et leurs accès
-- Accès par ligne de production
-- Accès par catégorie : Produit, Dossier, Technique, Tech Transfer, Enregistrement, Site, Business
-- Tableau central éditable
-- Produit standardisé : `dci dosage forme`
-- Couleurs automatiques : OK vert, Manquant rouge, Réserve orange
-- Détail produit
-- Commentaires par cellule avec auteur/date
+- Interface big tableau, type Excel/Smartsheet
+- Header de catégorie au-dessus des colonnes
+- Couleurs par catégorie
+- Couleurs par statut : OK, Manquant, Réserve, etc.
+- Édition directe dans le tableau
+- Permissions par ligne de production et par catégorie
+- Commentaires par cellule
 - Historique des commentaires
-- Ajout de lignes de production
 - Ajout de produits
+- Ajout de lignes de production
 - Export Excel
 
 ## Lancement local
@@ -28,25 +48,17 @@ streamlit run app.py
 
 ## Identifiants par défaut
 
-- Username : `admin`
-- Password : `admin123`
+```txt
+username: admin
+password: admin123
+```
 
-Change le mot de passe admin dès le premier lancement.
+Change le mot de passe admin après le premier lancement.
 
 ## Déploiement Streamlit Cloud
 
 1. Créer un repo GitHub
-2. Upload tous les fichiers
-3. Aller sur Streamlit Cloud
-4. Choisir le repo
-5. Main file path : `app.py`
-6. Deploy
-
-## Structure
-
-- `app.py` : application principale
-- `db.py` : base SQLite et modèles
-- `auth.py` : login et permissions
-- `config.py` : catégories, colonnes, statuts
-- `utils.py` : helpers
-- `seed.py` : données initiales
+2. Uploader tous les fichiers
+3. Streamlit Cloud > New app
+4. Main file path : `app.py`
+5. Deploy

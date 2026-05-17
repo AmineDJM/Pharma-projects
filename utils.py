@@ -1,5 +1,4 @@
 import re
-import unicodedata
 from datetime import datetime
 from config import FORM_ABBREVIATIONS
 
