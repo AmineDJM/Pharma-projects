@@ -13,7 +13,7 @@ class User(Base):
     id = Column(Integer, primary_key=True)
     username = Column(String, unique=True, nullable=False)
     password_hash = Column(String, nullable=False)
-    role = Column(String, default="editor")
+    role = Column(String, default="editor")  # admin, editor, supplier, viewer
     is_active = Column(Boolean, default=True)
 
 class UserPermission(Base):
@@ -51,6 +51,13 @@ class Product(Base):
     global_status = Column(String, default="Pas commencé")
     project_manager = Column(String, default="")
 
+    ctd_zip = Column(String, default="")
+    module_1_file = Column(String, default="")
+    module_2_file = Column(String, default="")
+    module_3_file = Column(String, default="")
+    module_4_file = Column(String, default="")
+    module_5_file = Column(String, default="")
+
     dossier_available = Column(String, default="Non")
     module_1 = Column(String, default="Manquant")
     module_2 = Column(String, default="Manquant")
@@ -70,6 +77,9 @@ class Product(Base):
     production_comment = Column(Text, default="")
     technical_status = Column(String, default="Non commencé")
 
+    batch_formula_file = Column(String, default="")
+    manufacturing_process_file = Column(String, default="")
+    analytical_methods_file = Column(String, default="")
     batch_formula_received = Column(String, default="Non")
     manufacturing_process_received = Column(String, default="Non")
     analytical_methods_received = Column(String, default="Non")
@@ -81,6 +91,7 @@ class Product(Base):
     tt_owner = Column(String, default="")
     tt_deadline = Column(String, default="")
 
+    anpp_receipt_file = Column(String, default="")
     pre_submission = Column(String, default="Non")
     anpp_submission_date = Column(String, default="")
     receipt_acknowledged = Column(String, default="Non")
@@ -109,6 +120,7 @@ class Product(Base):
     market_attractiveness = Column(String, default="Moyenne")
     business_go_no_go = Column(String, default="À revoir")
 
+    row_version = Column(Integer, default=1)
     created_at = Column(DateTime(timezone=True), server_default=func.now())
     updated_at = Column(DateTime(timezone=True), onupdate=func.now())
 
@@ -122,6 +134,20 @@ class CellComment(Base):
     text = Column(Text, nullable=False)
     comment_date = Column(String, nullable=False)
     product = relationship("Product")
+
+class ChangeLog(Base):
+    __tablename__ = "change_logs"
+    id = Column(Integer, primary_key=True)
+    product_id = Column(Integer, nullable=True)
+    product_key = Column(String, default="")
+    production_line = Column(String, default="")
+    column_name = Column(String, default="")
+    old_value = Column(Text, default="")
+    new_value = Column(Text, default="")
+    changed_by = Column(String, default="")
+    change_type = Column(String, default="cell_update")  # cell_update, file_upload, create_product
+    changed_at = Column(String, default="")
+    source = Column(String, default="app")
 
 def init_db():
     Base.metadata.create_all(bind=engine)

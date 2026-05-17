@@ -1,33 +1,35 @@
 STATUS_COLORS = {
-    "OK": "#D9FDD3",
-    "Manquant": "#FFD6D6",
-    "Réserve": "#FFE9B3",
-    "Oui": "#D9FDD3",
-    "Non": "#FFD6D6",
-    "Partiel": "#FFE9B3",
-    "Haute": "#FFD6D6",
-    "Moyenne": "#FFE9B3",
-    "Basse": "#D9FDD3",
-    "Bloqué": "#FFD6D6",
-    "En cours": "#FFE9B3",
-    "Validé": "#D9FDD3",
-    "Approuvé": "#D9FDD3",
-    "Déposé": "#E3F2FD",
-    "Non déposé": "#F3F3F3",
-    "Ready for launch": "#D9FDD3",
-    "À revoir": "#FFE9B3",
-    "Go": "#D9FDD3",
-    "No Go": "#FFD6D6",
+    "OK": "#C8F7C5",
+    "Manquant": "#FFC9C9",
+    "Réserve": "#FFE2A8",
+    "Oui": "#C8F7C5",
+    "Non": "#FFC9C9",
+    "Partiel": "#FFE2A8",
+    "Haute": "#FFC9C9",
+    "Moyenne": "#FFE2A8",
+    "Basse": "#DDF8D7",
+    "Bloqué": "#FFC9C9",
+    "En cours": "#FFE2A8",
+    "Validé": "#C8F7C5",
+    "Approuvé": "#C8F7C5",
+    "Déposé": "#CFE8FF",
+    "Non déposé": "#F1F3F5",
+    "Ready for launch": "#C8F7C5",
+    "À revoir": "#FFE2A8",
+    "Go": "#C8F7C5",
+    "No Go": "#FFC9C9",
+    "À confirmer": "#F1F3F5",
+    "Uploaded": "#D9F2FF",
 }
 
 CATEGORY_COLORS = {
-    "Produit": "#E9ECEF",
-    "Dossier réglementaire": "#DDEBFF",
-    "Évaluation technique": "#EFE3FF",
-    "Tech transfer": "#FFF2CC",
-    "Enregistrement ANPP": "#DFF6E4",
-    "Site readiness": "#FFE5CC",
-    "Business": "#FADADD",
+    "Produit": "#F1F3F5",
+    "Dossier réglementaire": "#DBEAFE",
+    "Évaluation technique": "#EDE9FE",
+    "Tech transfer": "#FEF3C7",
+    "Enregistrement ANPP": "#DCFCE7",
+    "Site readiness": "#FFEDD5",
+    "Business": "#FCE7F3",
 }
 
 FORM_ABBREVIATIONS = {
@@ -64,6 +66,7 @@ CATEGORIES = {
         "priority", "availability_status", "global_status", "project_manager"
     ],
     "Dossier réglementaire": [
+        "ctd_zip", "module_1_file", "module_2_file", "module_3_file", "module_4_file", "module_5_file",
         "dossier_available", "module_1", "module_2", "module_3", "module_4", "module_5",
         "dossier_reserve", "dossier_owner", "dossier_deadline"
     ],
@@ -72,12 +75,13 @@ CATEGORIES = {
         "containment_needed", "dedicated_area_needed", "production_comment", "technical_status"
     ],
     "Tech transfer": [
+        "batch_formula_file", "manufacturing_process_file", "analytical_methods_file",
         "batch_formula_received", "manufacturing_process_received", "analytical_methods_received",
         "process_validation_received", "pilot_batch_done", "validation_batch_done",
         "technical_issue", "next_action_tt", "tt_owner", "tt_deadline"
     ],
     "Enregistrement ANPP": [
-        "pre_submission", "anpp_submission_date", "receipt_acknowledged", "anpp_reserves",
+        "anpp_receipt_file", "pre_submission", "anpp_submission_date", "receipt_acknowledged", "anpp_reserves",
         "reserve_response_status", "amm_obtained", "estimated_amm_date", "regulatory_status"
     ],
     "Site readiness": [
@@ -91,6 +95,19 @@ CATEGORIES = {
     ],
 }
 
+DOCUMENT_COLUMNS = {
+    "ctd_zip": "CTD ZIP",
+    "module_1_file": "Module 1 document",
+    "module_2_file": "Module 2 document",
+    "module_3_file": "Module 3 document",
+    "module_4_file": "Module 4 document",
+    "module_5_file": "Module 5 document",
+    "batch_formula_file": "Batch formula",
+    "manufacturing_process_file": "Manufacturing process",
+    "analytical_methods_file": "Analytical methods",
+    "anpp_receipt_file": "Accusé réception ANPP",
+}
+
 COLUMN_LABELS = {
     "product_key": "Produit",
     "supplier": "Fournisseur",
@@ -99,8 +116,14 @@ COLUMN_LABELS = {
     "priority": "Priorité",
     "availability_status": "Disponibilité",
     "global_status": "Statut global",
-    "project_manager": "Chef de projet",
+    "project_manager": "Chef projet",
 
+    "ctd_zip": "CTD ZIP",
+    "module_1_file": "M1 doc",
+    "module_2_file": "M2 doc",
+    "module_3_file": "M3 doc",
+    "module_4_file": "M4 doc",
+    "module_5_file": "M5 doc",
     "dossier_available": "Dossier dispo",
     "module_1": "M1",
     "module_2": "M2",
@@ -120,6 +143,9 @@ COLUMN_LABELS = {
     "production_comment": "Commentaire prod.",
     "technical_status": "Statut technique",
 
+    "batch_formula_file": "Batch formula doc",
+    "manufacturing_process_file": "Process doc",
+    "analytical_methods_file": "Méthodes doc",
     "batch_formula_received": "Batch formula",
     "manufacturing_process_received": "Process reçu",
     "analytical_methods_received": "Méthodes analytiques",
@@ -131,6 +157,7 @@ COLUMN_LABELS = {
     "tt_owner": "Resp. TT",
     "tt_deadline": "Deadline TT",
 
+    "anpp_receipt_file": "AR ANPP doc",
     "pre_submission": "Pré-soumission",
     "anpp_submission_date": "Dépôt ANPP",
     "receipt_acknowledged": "AR reçu",

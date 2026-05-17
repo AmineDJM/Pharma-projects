@@ -15,7 +15,7 @@ def seed_data():
             ("ARV", "raltégravir", "400 mg", "comprimé", "Partenaire Inde", "AT Pharma", "SD Pharmaceutical", "Yassine", "Haute", "Bloqué", "Partiel", "OK", "OK", "Manquant", "OK", "OK", "8M USD", "PCH", "Go"),
             ("ARV", "darunavir", "600 mg", "comprimé", "Partenaire Inde", "AT Pharma", "SD Pharmaceutical", "Assia", "Moyenne", "Pas commencé", "Non", "Manquant", "Manquant", "Manquant", "Manquant", "Manquant", "600k USD", "PCH", "À revoir"),
             ("oral oncologie", "lenalidomide", "25 mg", "gélule", "Partenaire Inde", "Fabricant Inde", "AT Pharma", "Chef projet 1", "Haute", "En cours", "Partiel", "OK", "OK", "Réserve", "OK", "OK", "À estimer", "PCH", "Go"),
-            ("oral oncologie", "nintedanib", "150 mg", "capsule", "Partenaire Chine", "Fabricant Chine", "AT Pharma", "Chef projet 2", "Haute", "En cours", "Partiel", "OK", "OK", "Réserve", "OK", "OK", "À estimer", "PCH", "Go"),
+            ("oral oncologie", "nintedanib", "150 mg", "capsule", "Deepak", "Fabricant Inde", "AT Pharma", "Chef projet 2", "Haute", "En cours", "Partiel", "OK", "OK", "Réserve", "OK", "OK", "À estimer", "PCH", "Go"),
             ("hormones orales", "progesterone micronisée", "200 mg", "capsule", "Partenaire Europe", "AT Pharma", "AT Pharma", "Chef projet 3", "Moyenne", "En cours", "Oui", "OK", "OK", "OK", "OK", "OK", "À estimer", "Ville", "Go"),
             ("capsules dures", "ibuprofène", "400 mg", "gélule", "Local", "AT Pharma", "AT Pharma", "Chef projet 4", "Basse", "Pas commencé", "Non", "Manquant", "Manquant", "Manquant", "Manquant", "Manquant", "À estimer", "Ville", "À revoir"),
         ]

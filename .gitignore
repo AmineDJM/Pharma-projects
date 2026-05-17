@@ -3,3 +3,4 @@ __pycache__/
 at_pharma_tracker.db
 *.xlsx
 .env
+uploaded_documents/

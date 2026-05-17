@@ -1,4 +1,5 @@
 import re
+import os
 from datetime import datetime
 from config import FORM_ABBREVIATIONS
 
@@ -18,6 +19,11 @@ def normalize_product_key(dci: str, dosage: str, form: str) -> str:
 
 def now_iso():
     return datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+
+def safe_filename(name: str) -> str:
+    name = str(name).strip().replace("\\", "_").replace("/", "_")
+    name = re.sub(r"[^A-Za-z0-9_.() \-]", "_", name)
+    return name[:180] or "file"
 
 def completion_score(row: dict) -> int:
     keys = [

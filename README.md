@@ -1,45 +1,32 @@
-# AT Pharma — Big Excel Project Tracker
+# AT Pharma — Excel Only Tracker
 
-Application Streamlit pour le suivi des projets AT Pharma sous forme de grand tableau type Excel.
+Version Streamlit orientée tableau unique type Excel/Smartsheet.
 
-## Logique produit
+## Philosophie
 
-- Une feuille par ligne de production :
-  - ARV
-  - Oral oncologie
-  - Injectable oncologie
-  - Biosimilaires
-  - Oral general formulation
-  - Hormones orales
-  - Capsules molles
-  - Capsules dures
-  - Injectables classiques
-
-- Une ligne = un produit
-- Les colonnes sont groupées par catégories :
-  - Produit
-  - Dossier réglementaire
-  - Évaluation technique
-  - Tech transfer
-  - Enregistrement ANPP
-  - Site readiness
-  - Business
+- Tout se fait dans le tableau principal.
+- Aucun panneau de fiche produit sous le tableau.
+- Les modifications se font directement dans les cellules.
+- L'utilisateur clique sur "Enregistrer les modifications" en haut à droite.
+- Les documents sont uploadés via une action de cellule/document et apparaissent dans le tableau.
+- Les logs sont réservés à l'administrateur.
 
 ## Fonctionnalités
 
-- Interface big tableau, type Excel/Smartsheet
-- Header de catégorie au-dessus des colonnes
-- Couleurs par catégorie
-- Couleurs par statut : OK, Manquant, Réserve, etc.
-- Édition directe dans le tableau
-- Permissions par ligne de production et par catégorie
-- Commentaires par cellule
-- Historique des commentaires
-- Ajout de produits
-- Ajout de lignes de production
+- Login local username/password
+- Rôles : admin, editor, supplier, viewer
+- Accès par feuille de production et par catégorie
+- Feuilles : ARV, oral oncologie, injectable oncologie, biosimilaires, etc.
+- Colonnes groupées visuellement par catégorie
+- Couleurs par catégorie et par statut
+- Édition directe
+- Upload ZIP/documents réglementaires
+- Historique de modifications : qui, quoi, avant, après, quand
+- Sauvegarde cellule-par-cellule pour préserver les modifications simultanées
 - Export Excel
+- Responsive Streamlit wide layout
 
-## Lancement local
+## Lancement
 
 ```bash
 pip install -r requirements.txt
@@ -49,16 +36,8 @@ streamlit run app.py
 ## Identifiants par défaut
 
 ```txt
-username: admin
-password: admin123
+admin
+admin123
 ```
 
-Change le mot de passe admin après le premier lancement.
-
-## Déploiement Streamlit Cloud
-
-1. Créer un repo GitHub
-2. Uploader tous les fichiers
-3. Streamlit Cloud > New app
-4. Main file path : `app.py`
-5. Deploy
+Change le mot de passe après le premier lancement.

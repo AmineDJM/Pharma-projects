@@ -34,7 +34,7 @@ def authenticate(username, password):
         db.close()
 
 def login_widget():
-    st.title("AT Pharma — Project Tracker")
+    st.title("AT Pharma — Excel Tracker")
     st.caption("Connexion locale")
     username = st.text_input("Username")
     password = st.text_input("Password", type="password")
