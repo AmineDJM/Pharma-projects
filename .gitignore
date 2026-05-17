@@ -1,0 +1,5 @@
+__pycache__/
+*.pyc
+pharma_tracker.db
+*.xlsx
+.env
